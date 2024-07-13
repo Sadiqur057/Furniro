@@ -282,6 +282,52 @@ function Navbar() {
                       x
                     </Typography>
                   </Box>
+
+                  <Box sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    fontSize: '18px',
+                    fontWeight: 500
+                  }}>
+                    <Typography>
+                      Subtotal
+                    </Typography>
+                    <Typography sx={{
+                      color: 'primary.main'
+                    }}>
+                      RS 6400
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box sx={{
+                  display: 'flex',
+                  gap: '10px',
+                  flexWrap: 'wrap'
+                }}>
+                  <Typography
+                    sx={{
+                      padding:'3px 16px',
+                      border:'1px solid black',
+                      borderRadius:'15px'
+                    }}>
+                    Cart
+                  </Typography>
+                  <Typography
+                    sx={{
+                      padding:'3px 16px',
+                      border:'1px solid black',
+                      borderRadius:'15px'
+                    }}>
+                    Checkout
+                  </Typography>
+                  <Typography
+                    sx={{
+                      padding:'3px 16px',
+                      border:'1px solid black',
+                      borderRadius:'15px'
+                    }}>
+                    Comparison
+                  </Typography>
                 </Box>
               </Box>
             </Menu>
