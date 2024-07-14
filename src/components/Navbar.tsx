@@ -18,7 +18,12 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import SearchIcon from '@mui/icons-material/Search';
 import Link from 'next/link';
 
-const pages = ['Home', 'Shop', 'About', 'Contact'];
+const pages = [
+  { name: 'Home', href: '/' },
+  { name: 'Shop', href: '/products' },
+  { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' }
+];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -35,8 +40,14 @@ function Navbar() {
   const LinkStyles = {
     textDecoration: 'none',
     color: 'black',
-    fontWeight: 700,
-    fontSize: 32
+    fontWeight: '600',
+  }
+
+  const logoStyles = {
+    textDecoration: 'none',
+    color: 'black',
+    fontWeight: '700',
+    fontSize:32
   }
 
   // cart related 
@@ -70,7 +81,7 @@ function Navbar() {
                 display: { xs: 'none', md: 'block' },
               }}
             >
-              <Link href='/' style={LinkStyles}>Furniro</Link>
+              <Link href='/' style={logoStyles}>Furniro</Link>
             </Box>
           </Box>
 
@@ -104,8 +115,15 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" sx={{ paddingX: '10px' }}>{page}</Typography>
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                  <Link
+                    key={page?.name}
+                    onClick={handleCloseNavMenu}
+                    href={page?.href}
+                    style={LinkStyles}
+                  >
+                    {page?.name}
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -115,18 +133,21 @@ function Navbar() {
             display: { xs: 'flex', md: 'none' },
             flexGrow: 1,
           }}>
-            <Link href='/' style={LinkStyles}>Furniro</Link>
+            <Link href='/' style={logoStyles}>Furniro</Link>
           </Box>
 
           <Box sx={{ display: { xs: 'none', md: 'flex', gap: '32px' } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
+              <Link
+                key={page?.name}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block', fontWeight: '700', textTransform: 'capitalize' }}
+                href={page?.href}
+                style={LinkStyles}
               >
-                {page}
-              </Button>
+                {page?.name}
+                {/* <Typography>
+                </Typography> */}
+              </Link>
             ))}
           </Box>
 
@@ -306,25 +327,25 @@ function Navbar() {
                 }}>
                   <Typography
                     sx={{
-                      padding:'3px 16px',
-                      border:'1px solid black',
-                      borderRadius:'15px'
+                      padding: '3px 16px',
+                      border: '1px solid black',
+                      borderRadius: '15px'
                     }}>
                     Cart
                   </Typography>
                   <Typography
                     sx={{
-                      padding:'3px 16px',
-                      border:'1px solid black',
-                      borderRadius:'15px'
+                      padding: '3px 16px',
+                      border: '1px solid black',
+                      borderRadius: '15px'
                     }}>
                     Checkout
                   </Typography>
                   <Typography
                     sx={{
-                      padding:'3px 16px',
-                      border:'1px solid black',
-                      borderRadius:'15px'
+                      padding: '3px 16px',
+                      border: '1px solid black',
+                      borderRadius: '15px'
                     }}>
                     Comparison
                   </Typography>
