@@ -5,45 +5,15 @@ import products from '../../data/products';
 import ProductCard from '@/components/ProductCard';
 import TuneIcon from '@mui/icons-material/Tune';
 import { InputBase} from '@mui/material';
+import HeadingSection from '@/components/HeadingSection';
 
 const Shop: React.FC = () => {
   return (
     <Box>
-      <Box sx={{
-        width: '100%',
-        height: 'fit-content',
-        fontFamily: 'Poppins',
-        padding: {
-          xs: '100px 10px'
-        },
-        backgroundImage: 'url(/images/section.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-        <Typography variant='h2' sx={{
-          fontSize: {
-            xs: '34px',
-            md: '48px',
-          },
-          fontWeight: 600,
-          marginBottom: '10px'
-        }}>
-          Shop
-        </Typography>
-        <Typography variant='h2' sx={{
-          fontSize: {
-            xs: '16px',
-            md: '22px',
-          },
-          fontWeight: 500
-        }}>
-          Home &gt; Shop
-        </Typography>
-      </Box>
+      <HeadingSection
+        img={'/images/section.png'}
+        title={'Products'}>
+      </HeadingSection>
       <Box sx={{
         display: 'flex',
         alignItem: 'center',
