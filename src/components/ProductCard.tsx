@@ -35,12 +35,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 sm: '220px',
                 md: '285px'
               },
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              objectFit: 'cover',
+              objectPosition: 'center',
               borderRadius: '6px 6px 0px 0px'
             }}
-            alt={product?.name}
-            src={product?.image}
+            alt={product?.name || 'Product Image'}
+            src={product?.image[0] || 'https://i.postimg.cc/g20VMtJJ/default-Img.png'}
           />
           <Box sx={{
             padding: '4px 16px 16px',
