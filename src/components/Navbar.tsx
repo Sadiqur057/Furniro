@@ -47,7 +47,7 @@ function Navbar() {
     textDecoration: 'none',
     color: 'black',
     fontWeight: '700',
-    fontSize:32
+    fontSize: 32
   }
 
   // cart related 
@@ -145,8 +145,7 @@ function Navbar() {
                 style={LinkStyles}
               >
                 {page?.name}
-                {/* <Typography>
-                </Typography> */}
+
               </Link>
             ))}
           </Box>
@@ -325,14 +324,17 @@ function Navbar() {
                   gap: '10px',
                   flexWrap: 'wrap'
                 }}>
-                  <Typography
-                    sx={{
-                      padding: '3px 16px',
-                      border: '1px solid black',
-                      borderRadius: '15px'
-                    }}>
-                    Cart
-                  </Typography>
+                  <Link href="/cart" style={{textDecoration:'none'}}>
+                    <Typography
+                      sx={{
+                        padding: '3px 16px',
+                        border: '1px solid black',
+                        borderRadius: '15px',
+                        color:'black'
+                      }}>
+                      Cart
+                    </Typography>
+                  </Link>
                   <Typography
                     sx={{
                       padding: '3px 16px',
